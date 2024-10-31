@@ -1,3 +1,4 @@
+import 'package:disenopantalla/pantalla.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,31 +10,8 @@ class Myapp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-       home: Scaffold(
-        
-         appBar: AppBar(
-          
-         ),
-         body: Column(
-          children: [
-            Center(
-             child: CircleAvatar(
-              radius: 40.0,
-              backgroundColor: Colors.deepOrangeAccent,
-              child: Icon(Icons.account_circle_rounded,size: 60,),
-             ),
-            ),
-            Text("cofeestories",
-            style: TextStyle(
-            fontSize: 25.0,
-            fontWeight: FontWeight.w800
-            ),
-            )
-            
-          ],
-         ),
-       ),
-
+       home: Pantalla()
+       
     );
   }
 
