@@ -7,9 +7,9 @@ class Pantalla extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-         appBar: AppBar(toolbarHeight: 20,),
+         appBar: AppBar(toolbarHeight: 15),
          body:Padding(
-          padding: const EdgeInsets.symmetric(horizontal:20.0,),
+          padding: const EdgeInsets.symmetric(horizontal:15.0,),
          child:Column(
           children: [
             Center(
@@ -18,14 +18,11 @@ class Pantalla extends StatelessWidget{
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     CircleAvatar(
-              radius: 50.0,
+              radius: 45.0,
               backgroundColor: Colors.deepOrangeAccent,
               backgroundImage: AssetImage('assets/avatar_example.jpg'),  // dejar el icon mientras busco como poner una imagen en el circle avatar 
              ),
 
-
-             Divider(color:Colors.white,
-            height: 16.0,),
 
             Text("Coffestories",
             style: TextStyle(
@@ -80,7 +77,7 @@ class Pantalla extends StatelessWidget{
                      trailing: Icon(Icons.arrow_forward_outlined, size: 18)
                   ),
 
-                  Divider(height: 8,),
+                  Divider(height: 5,),
 
                   ListTile(
                     title: Text('Support'),
@@ -94,7 +91,7 @@ class Pantalla extends StatelessWidget{
           Divider(color: Colors.white,
             height: 15.0,),
 
-         const Mensaje(message: "Preference"),
+         const Mensaje(message: "Preferences"),
 
               Card(
               shape: RoundedRectangleBorder(
@@ -111,7 +108,7 @@ class Pantalla extends StatelessWidget{
                      activeTrackColor: Colors.green[900]),
                   ),
 
-                  Divider(height: 8,),
+                  Divider(height: 5,),
 
                   ListTile(
                      title: Text('Face ID'),
@@ -123,7 +120,7 @@ class Pantalla extends StatelessWidget{
                     
                   ),
 
-                  Divider(height: 8,),
+                  Divider(height: 5,),
                   
                   ListTile(
                      title: Text('PIN Code'),
@@ -132,7 +129,7 @@ class Pantalla extends StatelessWidget{
                     
                     
                   ),
-                  Divider(height: 8,),
+                  Divider(height: 5,),
 
                   ListTile(
                     leading: Icon(Icons.login_outlined,color: Colors.red,),
