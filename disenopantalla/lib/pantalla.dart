@@ -2,14 +2,14 @@ import 'package:disenopantalla/Texto.dart';
 import 'package:flutter/material.dart';
 
 class Pantalla extends StatelessWidget{
-  bool isSwitched=false;
+  bool isSwitched=true;
  
   @override
   Widget build(BuildContext context){
     return Scaffold(
          appBar: AppBar(toolbarHeight: 20,),
          body:Padding(
-          padding: const EdgeInsets.symmetric(horizontal:15.0,vertical: 5),
+          padding: const EdgeInsets.symmetric(horizontal:20.0,),
          child:Column(
           children: [
             Center(
@@ -18,9 +18,9 @@ class Pantalla extends StatelessWidget{
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     CircleAvatar(
-              radius: 30.0,
+              radius: 50.0,
               backgroundColor: Colors.deepOrangeAccent,
-              child: Icon(Icons.accessibility_sharp),  // dejar el icon mientras busco como poner una imagen en el circle avatar 
+              backgroundImage: AssetImage('assets/avatar_example.jpg'),  // dejar el icon mientras busco como poner una imagen en el circle avatar 
              ),
 
 
@@ -55,7 +55,7 @@ class Pantalla extends StatelessWidget{
               fontSize: 15
             ),
             ),
-            style: ElevatedButton.styleFrom(backgroundColor:Colors.black, )
+            style: ElevatedButton.styleFrom(backgroundColor:Colors.black )
             )
                     ],
          )
@@ -69,22 +69,22 @@ class Pantalla extends StatelessWidget{
 
             Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.circular(18.0),
               ),
               elevation: 1,
               child: Column(
                 children: [
                   ListTile(
-                    leading: Icon(Icons.storefront_sharp),
                     title: Text('My stores'),
+                    leading: Icon(Icons.storefront_sharp),
                      trailing: Icon(Icons.arrow_forward_outlined, size: 18)
                   ),
 
-                  Divider(height: 5,),
+                  Divider(height: 8,),
 
                   ListTile(
-                    leading: Icon(Icons.support_rounded),
                     title: Text('Support'),
+                    leading: Icon(Icons.support_rounded),
                     trailing: Icon(Icons.arrow_forward_outlined, size: 18),
                   ),
          ],
@@ -98,41 +98,46 @@ class Pantalla extends StatelessWidget{
 
               Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.circular(18.0),
               ),
               elevation: 1,
               child: Column(
                 children: [
                   ListTile(
-                    leading: Icon(Icons.notifications),
                     title: Text('Push Notifications'),
-                     trailing: Icon(Icons.arrow_forward_outlined, size: 18)
+                    leading: Icon(Icons.notifications),
+                     trailing:  Switch(value: isSwitched, onChanged: (value) {},
+                     activeColor: Colors.white,
+                     activeTrackColor: Colors.green[900]),
                   ),
 
-                  Divider(height: 5,),
+                  Divider(height: 8,),
 
                   ListTile(
+                     title: Text('Face ID'),
                     leading: Icon(Icons.tag_faces_outlined),
-                    title: Text('Face ID'),
-                    trailing: Icon(Icons.arrow_forward_outlined, size: 18),
+                    trailing: Switch(value: isSwitched, onChanged: (value) {},
+                    activeColor:Colors.white,
+                    activeTrackColor: Colors.green[900])
                     
                     
                   ),
 
-                  Divider(height: 5,),
+                  Divider(height: 8,),
                   
                   ListTile(
+                     title: Text('PIN Code'),
                     leading: Icon(Icons.format_list_numbered_sharp),
-                    title: Text('PIN Code'),
                     trailing: Icon(Icons.arrow_forward_outlined, size: 18),
                     
                     
                   ),
-                  Divider(height: 5,),
+                  Divider(height: 8,),
 
                   ListTile(
                     leading: Icon(Icons.login_outlined,color: Colors.red,),
                     title: Text('logout',selectionColor: Colors.redAccent,),
+                    onTap: (){},
            
                   ),
 
