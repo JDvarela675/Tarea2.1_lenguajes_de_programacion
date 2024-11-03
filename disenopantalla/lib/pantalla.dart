@@ -8,6 +8,7 @@ class Pantalla extends StatelessWidget{
   Widget build(BuildContext context){
     return Scaffold(
          appBar: AppBar(toolbarHeight: 15),
+
          body:Padding(
           padding: const EdgeInsets.symmetric(horizontal:15.0,),
          child:Column(
@@ -19,7 +20,7 @@ class Pantalla extends StatelessWidget{
                   children: [
                     CircleAvatar(
               radius: 45.0,
-              backgroundColor: Colors.deepOrangeAccent,
+             
               backgroundImage: AssetImage('assets/avatar_example.jpg'),  // dejar el icon mientras busco como poner una imagen en el circle avatar 
              ),
 
@@ -63,6 +64,9 @@ class Pantalla extends StatelessWidget{
             height: 22.0,),
 
             Mensaje(message: "Inventories"),
+            
+            Divider(color: Colors.white,
+            height: 12.0,),
 
             Card(
               shape: RoundedRectangleBorder(
@@ -72,7 +76,18 @@ class Pantalla extends StatelessWidget{
               child: Column(
                 children: [
                   ListTile(
-                    title: Text('My stores'),
+                    title: Row(
+                      children: [
+                        Text('My stores'),
+                        SizedBox(width: 7), // separar el texto de el cicrle avatar con las notificaciones
+                      CircleAvatar(radius: 12,
+                      backgroundColor:Colors.green[600],
+                      child: Text('2',
+                      style: TextStyle(fontSize: 12,color:  Colors.white),
+                     ),
+                      )
+                      ],
+                    ),
                     leading: Icon(Icons.storefront_sharp),
                      trailing: Icon(Icons.arrow_forward_outlined, size: 18)
                   ),
@@ -89,9 +104,12 @@ class Pantalla extends StatelessWidget{
          ),
          
           Divider(color: Colors.white,
-            height: 15.0,),
+            height: 12.0,),
 
          const Mensaje(message: "Preferences"),
+
+          Divider(color: Colors.white,
+            height: 12.0,),
 
               Card(
               shape: RoundedRectangleBorder(
@@ -105,7 +123,7 @@ class Pantalla extends StatelessWidget{
                     leading: Icon(Icons.notifications),
                      trailing:  Switch(value: isSwitched, onChanged: (value) {},
                      activeColor: Colors.white,
-                     activeTrackColor: Colors.green[900]),
+                     activeTrackColor: Colors.green[600]),
                   ),
 
                   Divider(height: 5,),
@@ -115,7 +133,7 @@ class Pantalla extends StatelessWidget{
                     leading: Icon(Icons.tag_faces_outlined),
                     trailing: Switch(value: isSwitched, onChanged: (value) {},
                     activeColor:Colors.white,
-                    activeTrackColor: Colors.green[900])
+                    activeTrackColor: Colors.green[600])
                     
                     
                   ),

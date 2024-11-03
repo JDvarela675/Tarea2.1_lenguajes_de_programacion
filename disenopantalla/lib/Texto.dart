@@ -11,7 +11,9 @@ class Mensaje extends StatelessWidget {
               child:  Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(message,textAlign: TextAlign.right,),
+                  Text(message,textAlign: TextAlign.right,style: TextStyle(
+              fontSize: 12
+            ),),
                 ],
               ),
             );
